@@ -1,6 +1,7 @@
 
 from character import Character
 from goblin import Goblin
+from loja import Loja
 
 tubarao_vermelho = Character(life_point = 100, point_of_attack = 17, name = "Tubarão Vermelho")
 goblin_venenoso = Goblin(life_point = 70, point_of_attack = 13, type = "Goblin Venenoso", intelligence = 100)
@@ -18,4 +19,8 @@ tubarao_vermelho.attack(goblin_venenoso)
 print(f'Pós ataque {tubarao_vermelho.name} sua vida é {tubarao_vermelho.life_point}')
 print(f'Pós ataque {goblin_venenoso.type} sua vida é {goblin_venenoso.life_point}')
 
+loja = Loja()
+
+print("Bem-vindo à loja!")
+loja.listar_itens()
 

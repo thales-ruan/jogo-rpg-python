@@ -7,4 +7,6 @@ class LivingBeing:
     def attack(self,target):
         target.life_point -= self.point_of_attack
         print(f'Ataque foi realizado e causou {target.point_of_attack} pontos de danos') 
-   
+    
+    def update_points(self, amount):
+        self.points += amount
