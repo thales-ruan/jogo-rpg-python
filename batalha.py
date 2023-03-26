@@ -7,7 +7,8 @@ from loja import Loja
 tubarao_vermelho = Personagem(pontos_de_vida = 100, pontos_de_ataque = 17, nome = "Tubarão Vermelho")
 goblin_venenoso = Goblin(pontos_de_vida = 70, pontos_de_ataque = 13, tipo = "Goblin Venenoso", inteligencia = 100)
 superman = Personagem(pontos_de_vida = 140, pontos_de_ataque = 23, nome = "Super-Man")
-
+formiga = Personagem(pontos_de_vida = 56, pontos_de_ataque = 13, nome = "formiga")
+barata = Personagem(pontos_de_vida = 49, pontos_de_ataque = 21, nome = "Barata voadoara")
 item_loja = Loja()
 
 
@@ -42,3 +43,5 @@ def batalha(atacante, defensor, item_loja=None):
 
 batalha(tubarao_vermelho, goblin_venenoso,item_loja)
 batalha(tubarao_vermelho, superman)
+batalha(barata,formiga,item_loja)
+batalha(barata, superman)
