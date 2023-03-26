@@ -19,9 +19,9 @@ class Loja:
                 personagem.ouro -= item["preco"]
                 tipo_do_item = nome_do_item.split()[0] 
                 if tipo_do_item == "Espada" or tipo_do_item == "Machado":
-                    personagem.point_of_attack  += item["dano"]
+                    personagem.pontos_de_ataque  += item["dano"]
                     personagem.arma = nome_do_item
-                print(f"{personagem.name} comprou {nome_do_item}!")
+                print(f"{personagem.nome} comprou {nome_do_item}!")
             else:
                 print("Você não tem ouro suficiente para comprar este item.")
         else:

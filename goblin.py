@@ -1,8 +1,7 @@
-from monster import Monster
+from monstro import Monstro
 
-
-class Goblin(Monster):
-    def __init__(self, life_point, point_of_attack, type, intelligence):
-        super().__init__(life_point, point_of_attack, type)
-        self.intelligence = intelligence
+class Goblin(Monstro):
+    def __init__(self, pontos_de_vida, pontos_de_ataque, tipo, inteligencia):
+        super().__init__(pontos_de_vida, pontos_de_ataque, tipo)
+        self.inteligencia = inteligencia
         

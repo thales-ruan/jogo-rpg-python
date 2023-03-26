@@ -1,12 +1,12 @@
 
-from character import Character
-from monster import Monster
+from personagem import Personagem
+from monstro import Monstro
 from goblin import Goblin
 from loja import Loja
 
-tubarao_vermelho = Character(life_point = 100, point_of_attack = 17, name = "Tubarão Vermelho")
-goblin_venenoso = Goblin(life_point = 70, point_of_attack = 13, type = "Goblin Venenoso", intelligence = 100)
-superman = Character(life_point = 140, point_of_attack = 23, name = "Super-Man")
+tubarao_vermelho = Personagem(pontos_de_vida = 100, pontos_de_ataque = 17, nome = "Tubarão Vermelho")
+goblin_venenoso = Goblin(pontos_de_vida = 70, pontos_de_ataque = 13, tipo = "Goblin Venenoso", inteligencia = 100)
+superman = Personagem(pontos_de_vida = 140, pontos_de_ataque = 23, nome = "Super-Man")
 
 item_loja = Loja()
 
@@ -14,31 +14,31 @@ item_loja = Loja()
 def batalha(atacante, defensor, item_loja=None):
 
     print('\n Apresentando lutadores')
-    print(f'Personagem: {atacante.name} , Sua vida é: {atacante.life_point} e seu ponto de ataque é: {atacante.point_of_attack}')
+    print(f'Personagem: {atacante.nome} , Sua vida é: {atacante.pontos_de_vida} e seu ponto de ataque é: {atacante.pontos_de_ataque}')
     print('############### VS ###############')
-    if isinstance(defensor, Monster):
-        print(f'Personagem do tipo: {defensor.type} , Sua vida é: {defensor.life_point} e seu ponto de ataque é: {defensor.point_of_attack} Inteligencia: {defensor.intelligence}')
+    if isinstance(defensor, Monstro):
+        print(f'Personagem do tipo: {defensor.tipo} , Sua vida é: {defensor.pontos_de_vida} e seu ponto de ataque é: {defensor.pontos_de_ataque} Inteligencia: {defensor.inteligencia}')
     else:
-        print(f'Personagem: {defensor.name} , Sua vida é: {defensor.life_point} e seu ponto de ataque é: {defensor.point_of_attack}')
+        print(f'Personagem: {defensor.nome} , Sua vida é: {defensor.pontos_de_vida} e seu ponto de ataque é: {defensor.pontos_de_ataque}')
 
-    while atacante.life_point > 0 and defensor.life_point > 0:
-        atacante.attack(defensor)
-        if defensor.life_point <= 0:
-            print(f"{atacante.name} Venceu a batalha!\n")
+    while atacante.pontos_de_vida > 0 and defensor.pontos_de_vida > 0:
+        atacante.ataque(defensor)
+        if defensor.pontos_de_vida <= 0:
+            print(f"{atacante.nome} Venceu a batalha!\n")
             if item_loja:
                 atacante.ouro += 60
             break
 
-        defensor.attack(atacante)
-        if atacante.life_point <= 0:
-            print(f"{defensor.name} Venceu a batalha!\n")
+        defensor.ataque(atacante)
+        if atacante.pontos_de_vida <= 0:
+            print(f"{defensor.nome} Venceu a batalha!\n")
             if item_loja:
                 defensor.ouro += 60
             break
 
-    if item_loja and atacante.life_point > 0:
+    if item_loja and atacante.pontos_de_vida > 0:
         item_loja.comprar_item("Espada Ouro", atacante)
-        atacante.point_of_attack += 10
+        atacante.pontos_de_ataque += 10
 
 batalha(tubarao_vermelho, goblin_venenoso,item_loja)
 batalha(tubarao_vermelho, superman)
